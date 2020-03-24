@@ -12,4 +12,8 @@ describe "Array Intersection" do
   it "returns [50, 25, 43] for 50, 43, 25, 72], and [25, 36, 43, 50, 80]" do
     expect(intersection([50, 43, 25, 72], [25, 36, 43, 50, 80]).sort).must_equal [25, 43, 50]
   end
+
+  it "returns [] for [50, 43, 25, 72], and []" do
+    expect(intersection([50, 43, 25, 72], []).sort).must_equal []
+  end
 end
