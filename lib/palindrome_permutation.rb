@@ -12,8 +12,5 @@ def palindrome_permutation?(string)
     hash[string[i]] ? hash[string[i]] += 1 : hash[string[i]] = 1 
   end 
 
-
-  p hash
-
   hash.count { |letter, count| count % 2 != 0 } > 1 ? false : true 
 end 
