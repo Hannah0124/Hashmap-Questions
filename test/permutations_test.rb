@@ -24,4 +24,9 @@ describe "permutations?" do
   it "returns true for 'hannah', 'anhnha'" do
     expect(permutations?("hannah", "anhnha")).must_equal true
   end
+
+  it "returns false for 'heelo', 'hello'" do
+    expect(permutations?("heelo", "hello")).must_equal false
+  end
+
 end
