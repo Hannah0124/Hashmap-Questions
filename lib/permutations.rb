@@ -8,20 +8,14 @@ def permutations?(string1, string2)
 
   hash = {} 
 
-  i = 0
-  while i < string1.length
-    hash[string1[i]] = true 
-
-    i += 1
-  end  
-
-
-  j = 0 
-  while j < string2.length 
-    return false if !hash[string2[j]]
-
-    j += 1
+  string1.each_char do |char|
+    hash[char] ? hash[char] += 1 : hash[char] = 1 
   end 
 
-  return true
+  string2.each_char do |char|
+    hash[char] ? hash[char] -= 1 : false 
+  end 
+
+
+  hash.values.find { |num| num != 0 } ? false : true
 end 
